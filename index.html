@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Final Project</title>
+        <link rel="stylesheet" href="stylesheet.css">
+        <link rel="stylesheet" href="responsive.css">
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div class="header-left">
+                    <img class="logo" src="https://prog-8.com/images/html/advanced/main_logo.png">
+                </div>
+                <div class="header-right">
+                    <a href="#" class="about">About</a>
+                    <a href="#" class="contact">Contact</a>
+                </div>
+            </div>
+        </header>
+        <div class="carousel-wrapper">
+            <div class="container">
+                <div class="crsl-slide">
+                    <img src="src/sky-1.jpg" >
+                </div>
+                <div class="crsl-slide">
+                    <img src="src/sky-2.jpg" >
+                </div>
+                <div class="crsl-slide">
+                    <img src="src/sky-3.jpg" >
+                </div>
+
+                <a class="prev" onclick="plusSlide(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlide(1)">&#10095;</a>
+            </div>
+        </div>
+        <div class="card-section-wrapper">
+            <div class="container">
+                <div class="courses-cards">
+                    <div class="card">
+                        <ul>
+                            <li class="card-title">HTML</li>
+                            <li>A markup language to build a website</li>
+                            <li>Difficulty:</li>
+                        </ul>
+                        <a href="#">See more -></a>
+                    </div>
+                    <div class="card">
+                        <ul>
+                            <li class="card-title">CSS</li>
+                            <li>Necessary skill to decorate a website</li>
+                            <li>Difficulty:</li>
+                        </ul>
+                        <a href="#">See more -></a>
+                    </div>
+                    <div class="card">
+                        <ul>
+                            <li class="card-title">JavaScript</li>
+                            <li>Versatile and populare language</li>
+                            <li>Difficulty:</li>
+                        </ul>
+                        <a href="#">See more -></a>
+                    </div>
+                    <div class="card">
+                        <ul>
+                            <li class="card-title">Node</li>
+                            <li>Server-side framework of JavaScript</li>
+                            <li>Difficulty:</li>
+                        </ul>
+                        <a href="#">See more -></a>
+                    </div>
+                    <div class="card">
+                        <ul>
+                            <li class="card-title">React</li>
+                            <li>Front-end framework of JavaScript</li>
+                            <li>Difficulty:</li>
+                        </ul>
+                        <a href="#">See more -></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-wrapper">
+            <div class="container">
+                <button class="accordion">Accordion 1</button>
+                <div class="panel">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit numquam et veniam hic. Magnam nisi delectus cum nemo neque incidunt quibusdam dolorum eveniet ad omnis maxime earum quos, veniam voluptate.
+                    </p>
+                </div>
+                <button class="accordion">Accordion 2</button>
+                <div class="panel">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit numquam et veniam hic. Magnam nisi delectus cum nemo neque incidunt quibusdam dolorum eveniet ad omnis maxime earum quos, veniam voluptate.
+                    </p>
+                </div>
+                <button class="accordion">Accordion 3</button>
+                <div class="panel">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit numquam et veniam hic. Magnam nisi delectus cum nemo neque incidunt quibusdam dolorum eveniet ad omnis maxime earum quos, veniam voluptate.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="container">
+                <img src="https://prog-8.com/images/html/advanced/main_logo.png">
+            </div>
+        </footer>
+        <script>
+            const acc = document.getElementsByClassName("accordion");
+            for(let i=0; i<acc.length; i++){
+                acc[i].addEventListener("click", function () {
+                    const panel = this.nextElementSibling;
+
+                    if (panel.style.display  === "block"){
+                        panel.style.display = "none";
+                    } else {
+                        panel.style.display = "block";
+                    }
+                });
+            }
+
+            let slideIndex = 1;
+        </script>
+        <script>
+            const plusSlide = (n) => {
+                slideIndex += n;
+                showSlides(slideIndex);
+            }
+            
+            const showSlides = (n) => {
+                const slides = document.getElementsByClassName("crsl-slide");
+                if (n > slides.length) {
+                    slideIndex = 1;
+                }
+                if (n < 1) {
+                    slideIndex = slides.length;
+                }
+                for (let i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                    slides[slideIndex - 1].style.display = "block";
+            }
+
+            showSlides(slideIndex);
+        </script>
+    </body>
+</html>
